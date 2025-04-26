@@ -49,7 +49,8 @@ export async function POST(req: NextRequest) {
       shortSubtitle = match2 ? match2[1] : "";
     }
     return NextResponse.json({ shortTitle, shortSubtitle });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message || "Unknown error" }, { status: 500 });
+  } catch (e) {
+    const errorMessage = e instanceof Error ? e.message : "Unknown error";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 } 

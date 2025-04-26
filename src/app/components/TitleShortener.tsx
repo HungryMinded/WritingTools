@@ -25,8 +25,8 @@ export default function TitleShortener() {
       const data = await res.json();
       setShortTitle(data.shortTitle);
       setShortSubtitle(data.shortSubtitle);
-    } catch (e: any) {
-      setError(e.message || "Unknown error");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Unknown error");
     } finally {
       setLoading(false);
     }
@@ -44,7 +44,7 @@ export default function TitleShortener() {
     <div>
       <h2 className="text-2xl font-bold mb-4">Title Shortener</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-4">
-        Shorten your article's title and subtitle for a thumbnail, keeping them click-worthy and clear.
+        Shorten your article&apos;s title and subtitle for a thumbnail, keeping them click-worthy and clear.
       </p>
       <div className="space-y-6">
         <div>
