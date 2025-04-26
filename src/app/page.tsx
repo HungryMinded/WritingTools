@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import TitleCapitalizer from "./components/TitleCapitalizer";
+import TitleShortener from "./components/TitleShortener";
 
 // Tools available in the application
 const TOOLS = {
   TITLE_CAPITALIZER: "Title Capitalizer",
+  TITLE_SHORTENER: "Title Shortener",
   // Add more tools here in the future
 };
 
@@ -40,6 +42,7 @@ export default function Home() {
 
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         {selectedTool === TOOLS.TITLE_CAPITALIZER && <TitleCapitalizer />}
+        {selectedTool === TOOLS.TITLE_SHORTENER && <TitleShortener />}
         {/* Add more tool components here as they are developed */}
       </div>
     </div>
